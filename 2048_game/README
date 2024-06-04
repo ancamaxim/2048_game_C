@@ -1,0 +1,89 @@
+Cerința 1
+
+Realizare meniu principal
+
+Am realizat o funcție de meniu în care am afișat
+opțiunile utilizatorului: 
+New Game
+Resume
+Quit
+folosind un highlight verde pe scris pentru a evidenția
+opțiunea curentă.
+La selectarea New Game / Resume, am apelat funcția
+corespunzătoare și am transmis opțiunea printr-un parametru.
+Pentru selectare Quit sau apăsare tasta Q,
+am ieșit din meniu și am transmis opțiunea de exit
+printr-o variabilă.
+
+Cerința 2
+
+Definire layout ecran de joc
+
+În funcția new_game_resume,
+am printat câte o fereastră și un box separat,
+adaptand dimensiunile acestora la dimensiunile ecranului.
+pentru fiecare din cele 16 celule
+pe care le voi colora ulterior,
+am generat aleatoriu doua numere (2 sau 4)
+aflate în poziții generate aleatoriu
+și le-am printat pe ecran folosind funcția mark.
+
+Am printat data curentă după formatul dd.mm.yy hour:meniu,
+care se va actualiza pe ecran,
+scorul inițial (0),
+și o legendă a comenzilor valide.
+Am afișat legenda comenzilor valide actualizată
+la fiecare citire folosindu-mă de funcțiile:
+afisare_legenda și clear_legenda.
+
+Cerința 3
+
+Implementare joc
+
+Funcțiile Push0toEnd, Push0toBeg, Push0toLeft, Push0toRight
+mută toate elementele nule în direcția opusă
+celei selectate de utilizator.
+
+Funcția game unește elementele identice de pe aceeași
+linie / coloană (în funcție de opțiune) și
+actualizează scorul.
+
+În funcția new_game_resume, 
+în cazul unei mutări valide, se apelează funcțiile anterioare,
+se generează o nouă mutare aleatoare,
+și se actualizează scorul.
+
+Am verificat dacă mutarea e validă cu funcția invalid
+Pentru mutare invalidă, se afișează un mesaj corespunzator și se așteapta o mutare validă.
+
+Bonus: am folosit culori diferite corespunzătoare
+fiecarui tip de celulă și am creat 5 culori noi 
+(pink, brown, orange, yellow2, purple)
+folosind codul RGB.
+
+Cerința 4
+
+Mișcarea automată a celulelor
+
+Pornind de la fișierul select din arhiva temei,
+dacă nu s-a apăsat timp de 10 secunde nicio tastă,
+am apelat în funcția new_game_resume funcția best_move,
+care caută mutarea care eliberează cele mai multe celule, acestea mișcându-se automat.
+
+Cerința 5
+
+Finalizare joc
+
+Am utilizat in funcția new_game_resume funcțiile
+is_full, is_winner și valid_moves
+pentru a verifica dacă mai sunt mutări valide
+(în timp ce tabla e complet plină)
+sau dacă user-ul a câștigat.
+
+Am transmis rezultatul corespunzător 
+(dacă jocul e terminat și dacă user-ul a câștigat)
+prin variabilele end și exit.
+
+In funcția main, am afișat un mesaj corespunzător
+pentru game over și am oferit posibilitatea user-ului
+de a relua jocul.
